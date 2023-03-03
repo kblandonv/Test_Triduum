@@ -1,7 +1,7 @@
-# django_news
+# Triduum_test
 
 ## Table of Contents
-- [django\_news](#django_news)
+- [Triduum\_test](#triduum_test)
   - [Table of Contents](#table-of-contents)
   - [General Info](#general-info)
   - [Technologies](#technologies)
