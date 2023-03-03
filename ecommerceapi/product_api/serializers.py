@@ -11,10 +11,6 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ['id', 'name', 'price', 'stock']
 
-# Importamos el modelo de Order
-# Creamos la clase OrderSerializer
-# Indicamos que es un modelo serializador
-# Indicamos los campos que queremos serializar
 
 # Importamos el modelo de OrderDetail
 # Creamos la clase OrderDetailSerializer
@@ -27,9 +23,12 @@ class OrderDetailSerializer(serializers.ModelSerializer):
         model = OrderDetail
         fields = ['id', 'order_id', 'quantity', 'product_id']
 
-
+# Importamos el modelo de Order
+# Creamos la clase OrderSerializer
+# Indicamos que es un modelo serializador
+# Indicamos los campos que queremos serializar
 class OrderSerializer(serializers.ModelSerializer):
-
+    order_details = OrderDetailSerializer(many=True, read_only=True)
     class Meta:
         model = Order
-        fields = '__all__'
+        fields = ['id', 'date', 'client', 'order_details']
